@@ -19,10 +19,10 @@ RUN apk update \
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
-# copy entrypoint.sh
-COPY ./entrypoint.sh .
-RUN sed -i 's/\r$//g' entrypoint.sh
-RUN chmod +x entrypoint.sh
+# copy entrypoint.test.sh
+COPY ./entrypoint.test.sh .
+RUN sed -i 's/\r$//g' entrypoint.test.sh
+RUN chmod +x entrypoint.test.sh
 
 # copy project
 COPY . .
@@ -30,6 +30,9 @@ COPY . .
 # add and run as non-root user
 RUN adduser -D myuser
 USER myuser
+
+# run entrypoint.sh
+ENTRYPOINT ["entrypoint.test.sh"]
 
 # run gunicorn
 CMD gunicorn daw_django_docker.wsgi:application --bind 0.0.0.0:$PORT
