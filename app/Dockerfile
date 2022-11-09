@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.10-alpine
+FROM python:3.11-alpine
 
 # set work directory
 WORKDIR /usr/src/app
@@ -9,10 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install psycopg2
-RUN apk update \
-    && apk add --virtual build-essential gcc python3-dev musl-dev \
-    && apk add postgresql-dev \
-    && pip install psycopg2
+RUN apk update && apk add --virtual build-essential gcc python3-dev musl-dev && apk add postgresql-dev && pip install psycopg2
 
 # install dependencies
 COPY ./requirements.txt .
