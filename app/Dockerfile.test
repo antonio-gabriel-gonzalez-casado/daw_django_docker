@@ -27,14 +27,14 @@ RUN adduser -D myuser
 USER myuser
 
 # collect static files
-python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --noinput
 
-python manage.py flush --no-input
+RUN python manage.py flush --no-input
 
 # make migrations
-python manage.py makemigrations
+RUN python manage.py makemigrations
 
-python manage.py migrate
+RUN python manage.py migrate
 
 # run gunicorn
-gunicorn daw_django_docker.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn daw_django_docker.wsgi:application --bind 0.0.0.0:$PORT
