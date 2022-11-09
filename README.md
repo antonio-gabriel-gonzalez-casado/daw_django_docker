@@ -35,7 +35,7 @@ Prueba que tus cambios funcionan entrando en la url:
 1. Una vez modificado haz commit en tu rama.
 `git commit -m "TUS INICIALES"`
 2. Haz push a tu rama
-`git push`
+`git push --set-upstream origin develop_<TUSINICIALES>`
 3. Pide un Pull request de tu rama con la rama de test indicando tus iniciales en el título del Pull Request desde la interfaz de github
 
 # Flujo de despliegue
