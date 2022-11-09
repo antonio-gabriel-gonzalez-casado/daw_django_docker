@@ -31,7 +31,7 @@ En el directorio:
 /daw-django-heroku-docker/app/templates/students
 
 1. Crea una nueva rama que se llame develop_<TUSINICIALES>: 
-`git checkout -b develop_<TUS_INICIALES> main`
+`git checkout -b develop_IES main`
 2. Copia el archivo ejemplo.html a uno nuevo cuyo  nombre sea las iniciales de tu nombre: <INICIALES>.html
 3. Edita el fichero renombrado modificandolo por tus datos (no uses datos personales reales)
 
