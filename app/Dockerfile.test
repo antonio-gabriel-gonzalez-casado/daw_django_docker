@@ -33,6 +33,3 @@ USER myuser
 
 # run entrypoint.sh
 ENTRYPOINT ["entrypoint.test.sh"]
-
-# run gunicorn
-CMD gunicorn daw_django_docker.wsgi:application --bind 0.0.0.0:$PORT
