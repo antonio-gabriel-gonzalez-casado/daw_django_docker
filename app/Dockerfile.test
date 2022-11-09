@@ -32,4 +32,4 @@ RUN adduser -D myuser
 USER myuser
 
 # run entrypoint.sh
-ENTRYPOINT ["entrypoint.test.sh"]
+ENTRYPOINT ["./entrypoint.test.sh"]
