@@ -4,11 +4,12 @@ name: Deploy to heroku.
 # Run workflow on every push to master branch.
 on:
   push:
-    branches: [main]
+    branches: [test]
 
 # Your workflows jobs.
 jobs:
   build:
+    environment: TEST
     runs-on: ubuntu-latest
     steps:
       # Check-out your repository.
