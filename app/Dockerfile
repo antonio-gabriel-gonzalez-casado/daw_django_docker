@@ -26,5 +26,10 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 # copy project
 COPY . .
 
+# make migrations
+RUN python manage.py makemigrations
+
+RUN python manage.py migrate
+
 # run entrypoint.sh
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+# ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
