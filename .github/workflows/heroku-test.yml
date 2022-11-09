@@ -1,5 +1,5 @@
 # Your workflow name.
-name: Deploy to heroku.
+name: TEST - Deploy to heroku.
 
 # Run workflow on every push to master branch.
 on:
@@ -39,11 +39,11 @@ jobs:
           # (Optional, default: "./")
           # Dockerfile directory.
           # For example, if you have a Dockerfile in the root of your project, leave it as follows:
-          dockerfile_directory: ./
+          dockerfile_directory: ./app/
 
           # (Optional, default: "Dockerfile")
           # Dockerfile name.
-          dockerfile_name: Dockerfile
+          dockerfile_name: Dockerfile.test
 
           # (Optional, default: "")
           # Additional options of docker build command.

@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from . import views
 
 from .views import ping
 
@@ -22,4 +23,9 @@ from .views import ping
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ping/', ping, name="ping"),
+    path('',views.index, name="homepage"),
+    path('student/<student_id>',views.student, name="student"),
+    # Matches any html file
+    #re_path(r'^.*\.*', views.pages, name='pages'),
+
 ]
