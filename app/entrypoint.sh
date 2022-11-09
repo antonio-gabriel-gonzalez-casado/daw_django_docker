@@ -12,12 +12,12 @@ then
 fi
 
 # collect static files
-# python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput
 
 python manage.py flush --no-input
 
 # make migrations
-# python manage.py makemigrations
+python manage.py makemigrations
 
 python manage.py migrate
 

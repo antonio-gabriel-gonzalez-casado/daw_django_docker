@@ -135,3 +135,4 @@ env/
 db.sqlite3
 .env.dev
 .DS_Store
+app/staticfiles
