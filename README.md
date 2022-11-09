@@ -32,7 +32,7 @@ En el directorio:
 
 1. Crea una nueva rama que se llame develop_<TUSINICIALES>: 
 `git checkout -b develop_<TUS_INICIALES> main`
-2. Copia el archivo ejemplo.html a uno nuevo cuyo nombre sea las iniciales de tu nombre: <INICIALES>.html
+2. Copia el archivo ejemplo.html a uno nuevo cuyo  nombre sea las iniciales de tu nombre: <INICIALES>.html
 3. Edita el fichero renombrado modificandolo por tus datos (no uses datos personales reales)
 
 Prueba que tus cambios funcionan entrando en la url:
