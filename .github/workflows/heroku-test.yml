@@ -8,8 +8,8 @@ on:
 
 # Your workflows jobs.
 jobs:
-  environment: TEST
   build:
+    environment: TEST
     runs-on: ubuntu-latest
     steps:
       # Check-out your repository.
