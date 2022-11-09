@@ -2,12 +2,11 @@
 FROM python:3.10-alpine
 
 # set work directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DEBUG 0
 
 # install psycopg2
 RUN apk update \
@@ -19,21 +18,14 @@ RUN apk update \
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
+# copy entrypoint.sh
+COPY ./entrypoint.sh .
+RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+
 # copy project
 COPY . .
 
-# collect static files
-RUN python manage.py collectstatic --noinput
 
-# make migrations
-RUN python manage.py makemigrations
-
-# make migrations
-RUN python manage.py migrate
-
-# add and run as non-root user
-RUN adduser -D myuser
-USER myuser
-
-# run gunicorn
-CMD gunicorn daw_django_docker.wsgi:application --bind 0.0.0.0:$PORT
+# run entrypoint.sh
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

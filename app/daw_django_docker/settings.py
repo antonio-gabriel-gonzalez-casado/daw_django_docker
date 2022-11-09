@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-8@a$5rye%doa^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'test-daw-django-docker.herokuapp.com']
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
